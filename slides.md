@@ -111,6 +111,10 @@ __P.S We're hiring__
   - "Read automatic captions and use NLP to link various topics to Wikipedia, Maps, IMDB etc"
 * Just Arrived got started at OpenHack!
 
+---
+
+# Agenda
+
 ***
 
 ### Intro
