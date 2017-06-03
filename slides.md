@@ -314,7 +314,7 @@ They started mass-archiving sites to the Internet Archive.
 
 [github.com/buren/wayback_archiver](https://github.com/buren/wayback_archiver)
 
-[venturebeat.com article](https://venturebeat.com/2017/05/10/the-internet-archive-has-preserved-200tb-of-government-website-data-during-transition-to-trump-administration/)
+[venturebeat.com: 200TB gov-data backed up to Internet Archive](https://venturebeat.com/2017/05/10/the-internet-archive-has-preserved-200tb-of-government-website-data-during-transition-to-trump-administration/)
 
 ---
 
