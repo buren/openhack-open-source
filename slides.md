@@ -56,8 +56,8 @@ Guide \| Empower \| Connect
 ### Disclaimer
 
 * __Personal__ opinions, __not__ the opinions of my employer.
-* YMMV - Your mileage may vary)
-* IANAL - I'm not a lawyer
+* __YMMV__ - Your mileage may vary)
+* __IANAL__ - I'm not a lawyer
 
 ---
 
@@ -388,9 +388,10 @@ They started mass-archiving sites to the Internet Archive.
 
 * Contributing to a OSS project
   - Start small
-  - Read some old Pull Requests and issues
+  - Read some old pull requests and issues
   - Validate that your change is needed
   - Be nice :smiley:
+  - Spend time on writing good issues and pull requests
 * Building a OSS project
   - Build something yourselves
   - Being a maintainer can be hard
