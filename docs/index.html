@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+
+<title>Uppsala OpenHack - Jacob Burenstam</title>
+
+<meta name="description" content="">
+<meta name="author" content="Jacob Burenstam">
+<meta name="generator" content="reveal-ck 3.6.0">
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+<!-- Code syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+
+<link rel="stylesheet" href="css/reveal-ck.css">
+
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/syntax-themes/solarized_dark.css">
+
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+
+  </head>
+
+  <body>
+    <div class="reveal">
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
+    <section>
+
+<pre><code class="language-ruby">include OpenHack
+
+author = Presenter.new(:buren)
+slides = OpenSource::Slides.new
+
+wait until author.ready?
+
+author.present(slides) do |slide|
+  print slide
+  any_questions? if slide.last?
+end
+</code></pre>
+
+<p><a href="http://jacobburenstam.com/openhack-open-source">http://jacobburenstam.com/openhack-open-source</a></p>
+
+<p><img class="natural-image" src="images/justarrived-logo.png" style="max-width:400px"></p>
+
+</section>
+<section>
+
+<p><img class="natural-image" src="images/justarrived-logo.png" style="max-width:400px"></p>
+
+<p>Guide | Empower | Connect</p>
+
+</section>
+<section>
+
+<h3>Slides</h3>
+
+<p><a href="http://jacobburenstam.com/openhack-open-source">jacobburenstam.com/openhack-open-source</a></p>
+
+</section>
+<section>
+
+<div data-poller="js-poll-openhack-open-source-xp">
+  <p>Have you contributed to Open source?</p>
+  <button data-answer="">Open source?</button>
+  <button data-answer="">No</button>
+  <button data-answer="">Not yet..</button>
+  <button data-answer="">A bit</button>
+  <button data-answer="">A lot</button>
+  <hr>
+  <div data-chart="" data-refresh="5"></div>
+</div>
+
+</section>
+<section>
+
+<div data-poller="js-poll-openhack-open-source-user">
+  <p>Do you use open source?</p>
+  <button data-answer="">Yes</button>
+  <button data-answer="">No</button>
+  <hr>
+  <div data-chart="" data-refresh="5"></div>
+</div>
+
+</section>
+<section>
+
+<h3>Disclaimer</h3>
+
+<ul>
+  <li>
+<strong>Personal</strong> opinions, <strong>not</strong> the opinions of my employer.</li>
+  <li>YMMV - Your mileage may vary)</li>
+  <li>IANAL - I’m not a lawyer</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Jacob Burenstam</h2>
+
+<ul>
+  <li>Open source tinkerer</li>
+  <li>Useless code enthusiast</li>
+  <li>Co-Founder and CTO at Just Arrived</li>
+</ul>
+
+<hr>
+
+<ul>
+  <li><a href="https://github.com/buren">github.com/buren</a></li>
+  <li><a href="https://keybase.io/buren">keybase.io/buren</a></li>
+</ul>
+
+</section>
+<section>
+
+<h1>I love open source</h1>
+
+<p><img class="natural-image" src="images/github-profile.png" style="max-width:600px"></p>
+
+</section>
+<section>
+
+<h1>This slide deck is open source</h1>
+
+<p><a href="https://github.com/buren/openhack-open-source">github.com/buren/openhack-open-source</a></p>
+
+</section>
+<section>
+
+<h1>Just Arrived is open source <img class="emoji" alt=":heart:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2764.png">
+</h1>
+
+<p><a href="https://github.com/justarrived">github.com/justarrived</a></p>
+
+<p><strong>P.S We’re hiring</strong></p>
+
+</section>
+<section>
+
+<h1>
+<a href="https://github.com/buren" class="user-mention">@buren</a> <img class="emoji" alt=":heart:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2764.png"> open source</h1>
+
+<ul>
+  <li>Active in open source for over 5 years</li>
+  <li>Contributed to &gt;30 OSS projects</li>
+  <li>Open source libs/projects of my own
+    <ul>
+      <li>Just Arrived is by far the largest <img class="emoji" alt=":wink:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png">
+</li>
+    </ul>
+  </li>
+</ul>
+
+</section>
+<section>
+
+<h2>
+<img class="emoji" alt=":heart:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2764.png"> Hackathons</h2>
+
+<ul>
+  <li>Android TV, Hackathon winner @ Google
+    <ul>
+      <li>“Read automatic captions and use NLP to link various topics to Wikipedia, Maps, IMDB etc”</li>
+    </ul>
+  </li>
+  <li>Just Arrived got started at OpenHack!</li>
+</ul>
+
+</section>
+<section>
+<section>
+
+<h3>Intro</h3>
+
+<ul>
+  <li>What is open source?</li>
+  <li>Licenses, MIT, GPL etc <img class="emoji" alt=":books:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4da.png">
+</li>
+  <li>Richard Stallman &amp; Linus Torvalds <img class="emoji" alt=":neckbeard:" src="https://assets-cdn.github.com/images/icons/emoji/neckbeard.png">
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>What is open source?</h2>
+
+</section>
+<section>
+
+<ul>
+  <li><del>What is open source?</del></li>
+  <li>Licenses, MIT, GPL etc <img class="emoji" alt=":books:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4da.png">
+</li>
+  <li>Richard Stallman &amp; Linus Torvalds <img class="emoji" alt=":neckbeard:" src="https://assets-cdn.github.com/images/icons/emoji/neckbeard.png">
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Licenses, MIT, GPL etc <img class="emoji" alt=":books:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4da.png">
+</h2>
+
+</section>
+<section>
+
+<ul>
+  <li><del>What is open source?</del></li>
+  <li><del>Licenses, MIT, GPL etc <img class="emoji" alt=":books:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4da.png"></del></li>
+  <li>Richard Stallman &amp; Linus Torvalds <img class="emoji" alt=":neckbeard:" src="https://assets-cdn.github.com/images/icons/emoji/neckbeard.png">
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Richard Stallman &amp; Linus Torvalds <img class="emoji" alt=":neckbeard:" src="https://assets-cdn.github.com/images/icons/emoji/neckbeard.png">
+</h2>
+
+<p>Completely different views on open source. Even though both are considered open source “heroes”.</p>
+
+<blockquote>
+  <p>I didn’t want code, I wanted comments. - Linus Torvalds</p>
+</blockquote>
+
+<blockquote>
+  <p>If you use a proprietary program, you’re defenceless. - Richard Stallman</p>
+</blockquote>
+
+</section>
+<section>
+
+<ul>
+  <li><del>What is open source?</del></li>
+  <li><del>Licenses, MIT, GPL etc <img class="emoji" alt=":books:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4da.png"></del></li>
+  <li><del>Richard Stallman &amp; Linus Torvalds <img class="emoji" alt=":neckbeard:" src="https://assets-cdn.github.com/images/icons/emoji/neckbeard.png"></del></li>
+</ul>
+
+<p><br></p>
+
+<h2>Questions or comments?</h2>
+
+</section>
+</section>
+<section>
+
+<h3>Open Source Business</h3>
+
+</section>
+<section>
+<section>
+
+<h3>Open Source Business</h3>
+
+<ul>
+  <li>Open source companies <img class="emoji" alt=":office:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3e2.png">
+    <ul>
+      <li>Sentry (sentry.io)</li>
+      <li>Just Arrived</li>
+      <li>Discourse</li>
+      <li>Neo4J</li>
+      <li>…</li>
+    </ul>
+  </li>
+  <li>Open source risks? <img class="emoji" alt=":lock:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f512.png">
+    <ul>
+      <li>The case of hacking Instagram</li>
+      <li><a href="https://exfiltrated.com/research-Instagram-RCE.php">https://exfiltrated.com/research-Instagram-RCE.php</a></li>
+      <li>AWS/Slack tokens</li>
+    </ul>
+  </li>
+</ul>
+
+</section>
+<section>
+
+<h2>Open source companies <img class="emoji" alt=":office:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3e2.png">
+</h2>
+
+<ul>
+  <li>Sentry (sentry.io)</li>
+  <li>Just Arrived</li>
+  <li>Discourse</li>
+  <li>Neo4J</li>
+  <li>…</li>
+</ul>
+
+</section>
+<section>
+
+<ul>
+  <li><del>Open source companies <img class="emoji" alt=":office:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3e2.png"></del></li>
+  <li>Open source risks? <img class="emoji" alt=":lock:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f512.png">
+    <ul>
+      <li>The case of hacking Instagram</li>
+      <li><a href="https://exfiltrated.com/research-Instagram-RCE.php">https://exfiltrated.com/research-Instagram-RCE.php</a></li>
+      <li>AWS/Slack tokens</li>
+    </ul>
+  </li>
+</ul>
+
+</section>
+<section>
+
+<h2>Open source risks? <img class="emoji" alt=":lock:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f512.png">
+</h2>
+
+<ul>
+  <li>The case of hacking Instagram</li>
+  <li><a href="https://exfiltrated.com/research-Instagram-RCE.php">https://exfiltrated.com/research-Instagram-RCE.php</a></li>
+  <li>AWS/Slack tokens</li>
+</ul>
+
+</section>
+<section>
+
+<ul>
+  <li><del>Open source companies <img class="emoji" alt=":office:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3e2.png"></del></li>
+  <li><del>Open source risks? <img class="emoji" alt=":lock:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f512.png"></del></li>
+</ul>
+
+<p><br></p>
+
+<h2>Questions or comments?</h2>
+
+</section>
+</section>
+<section>
+
+<h3>Open Source Motivation <img class="emoji" alt=":muscle:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4aa.png">
+</h3>
+
+</section>
+<section>
+<section>
+
+<h3>Open Source Motivation <img class="emoji" alt=":muscle:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4aa.png">
+</h3>
+
+<ul>
+  <li>Why are all these developers giving away their code? <img class="emoji" alt=":scream:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f631.png">
+    <ul>
+      <li>Hobbyist, Hackers, Tinkerers</li>
+      <li>Curiosity</li>
+    </ul>
+  </li>
+  <li>Its fun and unexpected stuff happens!
+    <ul>
+      <li>Writing a brainfuck interpreter in a 20-day-old language</li>
+      <li>Archiving certain USGOV sites in response to Trump</li>
+    </ul>
+  </li>
+</ul>
+
+</section>
+<section>
+
+<h2>Why are all these developers giving away their code? <img class="emoji" alt=":scream:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f631.png">
+</h2>
+
+<ul>
+  <li>Hobbyist, Hackers, Tinkerers</li>
+  <li>Curiosity</li>
+</ul>
+
+</section>
+<section>
+
+<h2>What is your motivation?</h2>
+
+</section>
+<section>
+
+<h2>Its fun and unexpected stuff happens!</h2>
+
+</section>
+<section>
+
+<h2>Two stories of my own</h2>
+
+</section>
+<section>
+
+<h3>Writing a brainfuck interpreter in a 20-day-old language.</h3>
+
+<ul>
+  <li><a href="https://news.ycombinator.com/item?id=9053694">https://news.ycombinator.com/item?id=9053694</a></li>
+  <li><a href="https://github.com/buren/vivaldi-bf-interpreter">https://github.com/buren/vivaldi-bf-interpreter</a></li>
+</ul>
+
+</section>
+<section>
+
+<h2>Vivaldi - Hacker News</h2>
+
+<p><img class="natural-image" src="images/vivaldi-hn.png" style="max-width:600px"></p>
+
+</section>
+<section>
+
+<h3>Current examples</h3>
+
+<p><img class="natural-image" src="images/vivaldi-examples-before.png" style="max-width:600px"></p>
+
+</section>
+<section>
+
+<h2>I wonder if I can write a</h2>
+<h2>brainfuck interpreter with Vivaldi</h2>
+<h2>🤔</h2>
+
+</section>
+<section>
+
+<h2>Vivaldi</h2>
+<h2>Github issue #1</h2>
+
+<p><img class="natural-image" src="images/vivaldi-issue-1.png" style="max-width:600px"></p>
+
+</section>
+<section>
+
+<p><img class="natural-image" src="images/vivaldi-issue-1-response.png" style="max-width:600px"></p>
+
+</section>
+<section>
+
+<p><img class="natural-image" src="images/vivaldi-issue-1.png" style="max-width:600px"></p>
+
+</section>
+<section>
+
+<p><img class="natural-image" src="images/vivaldi-pr-1-bf-interpreter.png" style="max-width:600px"></p>
+
+</section>
+<section>
+
+<p><img class="natural-image" src="images/vivaldi-pr-1-bf-interpreter-response.png" style="max-width:600px"></p>
+
+<p><img class="emoji" alt=":heart_eyes_cat:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f63b.png"></p>
+
+</section>
+<section>
+
+<h2>Archiving certain USGOV sites in response to Trump</h2>
+
+<p>Professors were scared that the Trump administration would withdraw funding for certain gov-sites.</p>
+
+<p>They started mass-archiving sites to the Internet Archive.</p>
+
+<hr>
+
+<p><a href="https://github.com/buren/wayback_archiver">github.com/buren/wayback_archiver</a></p>
+
+<p><a href="https://venturebeat.com/2017/05/10/the-internet-archive-has-preserved-200tb-of-government-website-data-during-transition-to-trump-administration/">venturebeat.com article</a></p>
+
+</section>
+<section>
+
+<h2>Questions or comments?</h2>
+
+</section>
+</section>
+<section>
+
+<h3>Big open source™</h3>
+
+</section>
+<section>
+<section>
+
+<h3>Big open source™</h3>
+
+<ul>
+  <li>Modern open source
+    <ul>
+      <li>Google (TensorFlow, Kubernetes, Angular, …)</li>
+      <li>Facebook (React, HHVM, jest, …) and what about their patent-clause?</li>
+      <li>Microsoft, yes Microsoft.. (dotnet, vscode, TypeScript, ..)</li>
+    </ul>
+  </li>
+  <li>Could open source be used in new places?
+    <ul>
+      <li>Outside of software?</li>
+      <li>Open source banks? governments?</li>
+      <li>Why aren’t governments institutions open sourcing their code???
+        <ul>
+          <li>WHY?!?#!@#^! <img class="emoji" alt=":hocho:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f52a.png">
+</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</section>
+<section>
+
+<h2>Modern open source</h2>
+
+<ul>
+  <li>Google (TensorFlow, Kubernetes, Angular, …)</li>
+  <li>Facebook (React, HHVM, jest, …) and what about their patent-clause?</li>
+  <li>Microsoft, yes Microsoft.. (dotnet, vscode, TypeScript, ..)</li>
+</ul>
+
+</section>
+<section>
+
+<ul>
+  <li><del>Modern open source</del></li>
+  <li>Could open source be used in new places?
+    <ul>
+      <li>Outside of software?</li>
+      <li>Open source banks? governments?</li>
+      <li>Why aren’t governments institutions open sourcing their code???
+        <ul>
+          <li>WHY?!?#!@#^! <img class="emoji" alt=":hocho:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f52a.png">
+</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</section>
+<section>
+
+<h2>Could open source be used in new places?</h2>
+
+<ul>
+  <li>Open source banks? governments?</li>
+  <li>Why aren’t governments institutions open sourcing their code???
+    <ul>
+      <li>WHY?!?#!@#^! <img class="emoji" alt=":hocho:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f52a.png">
+</li>
+    </ul>
+  </li>
+  <li>Outside of software?</li>
+</ul>
+
+</section>
+<section>
+
+<ul>
+  <li><del>Modern open source</del></li>
+  <li><del>Could open source be used in new places?</del></li>
+</ul>
+
+<hr>
+
+<h2>Questions or comments?</h2>
+
+</section>
+</section>
+<section>
+
+<h3>Contribute to open source</h3>
+
+</section>
+<section>
+<section>
+
+<h3>Contribute to open source</h3>
+
+<ul>
+  <li>How can I get started contributing?
+    <ul>
+      <li>Contributing to a OSS project</li>
+      <li>Building a OSS project</li>
+    </ul>
+  </li>
+</ul>
+
+</section>
+<section>
+
+<h2>How can I get started contributing?</h2>
+
+<ul>
+  <li>Contributing to a OSS project
+    <ul>
+      <li>Start small</li>
+      <li>Read some old Pull Requests and issues</li>
+      <li>Validate that your change is needed</li>
+      <li>Be nice <img class="emoji" alt=":smiley:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f603.png">
+</li>
+    </ul>
+  </li>
+  <li>Building a OSS project
+    <ul>
+      <li>Build something yourselves</li>
+      <li>Being a maintainer can be hard</li>
+      <li>People are <em>not always</em> nice</li>
+    </ul>
+  </li>
+</ul>
+
+</section>
+</section>
+<section>
+
+<p>Remember the code from the first slide?</p>
+
+<pre><code class="language-ruby">include OpenHack
+
+author = Presenter.new(:buren)
+slides = OpenSource::Slides.new
+
+wait until author.ready?
+
+author.present(slides) do |slide|
+  print slide
+  any_questions? if slide.last?
+end
+</code></pre>
+
+</section>
+<section>
+
+<pre><code class="language-ruby">DEADLINE = Time.new(2017, 6, 3, 14, 30, 0).freeze
+module OpenHack;end
+module OpenHack::OpenSource;end
+String.class_eval { define_method(:last?) { false } }
+NilClass.class_eval { define_method(:last?) { true } }
+define_method(:wait) { puts 'Still not ready..';sleep 3 }
+define_method(:any_questions?) { puts 'Any questions?' }
+define_method(:feedback) { puts 'Feedback?' }
+class OpenHack::Presenter &lt; Struct.new(:name)
+  define_method(:ready?) { Time.now &gt;= DEADLINE }
+  def present(slides); slides.to_a.each { |slide| yield(slide) };end
+end
+class OpenHack::OpenSource::Slides
+  define_method(:initialize) { @slides = File.read('slides.md').split('---') }
+  define_method(:to_a) { @slides + [nil] }
+end
+</code></pre>
+
+<p>This actually makes the previous code work <img class="emoji" alt=":trollface:" src="https://assets-cdn.github.com/images/icons/emoji/trollface.png"></p>
+
+</section>
+<section>
+
+<ul>
+  <li><a href="http://git.io/vnWsf">http://git.io/vnWsf</a></li>
+</ul>
+
+<p><img src="images/github-mark.png" alt="GitHub logo" class="octocat"></p>
+
+</section>
+<section>
+
+<h1>Build something awesome</h1>
+
+</section>
+<section>
+
+<h1>Build something</h1>
+<h1>open source</h1>
+
+</section>
+<section>
+
+<p><img class="natural-image" src="images/justarrived-logo.png" style="max-width:400px"></p>
+
+<p>Guide | Empower | Connect</p>
+
+</section>
+<section>
+
+<h1>Questions?</h1>
+
+<h2>github.com/buren</h2>
+<h2>github.com/justarrived</h2>
+
+<p><img class="natural-image" src="images/justarrived-logo.png" style="max-width: 300px;"></p>
+
+<p><em>We’re hiring <img class="emoji" alt=":heart_eyes_cat:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f63b.png"></em></p>
+
+</section>
+<section>
+
+<p><img class="natural-image" src="images/justarrived-logo.png"></p>
+
+<p>Guide | Empower | Connect</p>
+
+<!-- Third party dependencies -->
+<script src="js/libs/jquery.js"></script>
+
+<!-- <script src="js/libs/highcharts.js"></script> -->
+<script src="https://www.google.com/jsapi"></script>
+
+<script src="js/libs/chartkick.js"></script>
+
+<!-- JavaScript -->
+<script src="js/log.js"></script>
+
+<script src="js/resize-hack.js"></script>
+
+<script>
+  PollerConfig = { url: 'https://throwawaypoll.herokuapp.com' };
+</script>
+
+<script src="js/poller.js"></script>
+
+<script src="js/poller-dom.js"></script>
+
+<script>
+  PollerConfig = { url: 'https://throwawaypoll.herokuapp.com' };
+</script>
+
+</section>
+
+  </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  (function() {
+  function extend( a, b ) {
+    for(var i in b) {
+      a[i] = b[i];
+    }
+  }
+  var baseOptions = {
+    transition: 'page',
+
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true },
+      { src: 'plugin/notes/notes.js', async: true }
+    ]
+  };
+  var configOptions = {"controls":true,"progress":true,"history":true,"center":true}
+  var initializeOptions = {};
+  extend(initializeOptions, baseOptions);
+  extend(initializeOptions, configOptions);
+  Reveal.initialize(initializeOptions);
+})();
+
+</script>
+
+  </body>
+</html>
